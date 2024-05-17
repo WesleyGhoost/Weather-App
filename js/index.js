@@ -33,6 +33,7 @@ const getWeatherData = async (city) => {
 
 const showWeatherData = async (city) => {
     try {
+        weatherContainer.style.display = 'none'
         loader.style.display = 'block'
         const data = await getWeatherData(city)
         cityElement.innerText = data.name
@@ -46,7 +47,6 @@ const showWeatherData = async (city) => {
         countryElement.setAttribute('src', apiCountryURL)
         humidity.innerText = `${data.main.humidity}%`
         wind.innerText = `${data.wind.speed}km/h`
-        weatherContainer.style.display = 'block'
         changeCityImage(city)
     } catch (err) {
         if (city.value == undefined) {
@@ -58,6 +58,7 @@ const showWeatherData = async (city) => {
         }
     } finally {
         loader.style.display = 'none'
+        weatherContainer.style.display = 'block'
     }
 }
 

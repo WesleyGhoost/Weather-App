@@ -117,11 +117,8 @@ body {
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    position: fixed;
-    top: 20%;
-    left: 48%;
+    margin: 40px 0 0 40%;
     transform: translate(-50%, -50%);
-    z-index: 2;
     display: none;
     animation: loader 1s linear infinite;
 }
